@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<canvas id="snowCanvas"></canvas>
+<div class="wrap">
+		<h1 class="title">Погодное приложение</h1>
+<div class="controls">
+		<div class="input-block">
+				<input id="cityInput" type="text" placeholder="Введите город...">
+				<div id="suggestions" class="suggestions-box"></div>
+				<button class="btn" id="getWeatherBtn">Получить</button>
+		</div>
+		<div id="note" class="note">Данные берутся с Open-Meteo API</div>
+</div>
+
+
+<div id="currentWeather" class="current-card hidden">
+		<div class="left">
+				<h2 id="cityName"></h2>
+				<div class="desc" id="weatherDesc"></div>
+				<div class="temp" id="temperature"></div>
+
+				<div class="meta">
+						<div id="wind"></div>
+						<div id="humidity"></div>
+				</div>
+		</div>
+		<div class="right">
+				<img id="weatherIcon" class="current-icon" src="" alt="">
+		</div>
+</div>
+
+<div class="table-wrap hidden" id="forecastBlock">
+		<table>
+				<thead>
+						<tr>
+								<th>Дата</th>
+								<th>Мин/Макс</th>
+                <th>Описание</th>
+                <th>Ветер</th>
+                <th>Осадки</th>
+						</tr>
+				</thead>
+				<tbody id="forecastTable"></tbody>
+		</table>
+</div>
+
+<div id="loading" class="loading hidden">Загрузка...</div>
+<div id="error" class="error hidden"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
