@@ -70,13 +70,10 @@
 │
 └── img/
     ├── icons/        # SVG-иконки погоды
-    │   ├── clear.svg
-    │   ├── cloudy.svg
-    │   ├── rain.svg
-    │   ├── snow.svg
-    │   ├── thunder.svg
-    │   └── drizzle.svg
-    │
-    │
-    └── stars.png     # Фон со звёздами
+       ├── clear.svg
+       ├── cloudy.svg
+       ├── rain.svg
+       ├── snow.svg
+       ├── thunder.svg
+       └── drizzle.svg
 ```
