@@ -1,6 +1,14 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html, body {
     width: 100%;
     height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -22,9 +30,9 @@ body {
 }
 
 .wrap {
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 0 20px;
+    width: min(1000px, calc(100% - 32px));
+    margin: clamp(24px, 6vw, 60px) auto;
+    padding: 0;
 }
 
 .title {
@@ -53,6 +61,8 @@ body {
     flex: 1;
     outline: none;
     font-size: 15px;
+    min-width: 0;
+
 }
 
 #cityInput:focus {
@@ -182,9 +192,11 @@ tr:hover {
 }
 
 .forecast-icon {
-    width: 100px;
-    margin-left: 40px;
+    width: clamp(44px, 8vw, 72px);
+    display: block;
+    margin: 0 auto;
 }
+
 
 .hidden {
     display: none;
@@ -224,4 +236,88 @@ body::after {
     pointer-events: none;
 
     z-index: -1;
+}
+
+@media (max-width: 700px) {
+    .input-block {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .suggestions-box {
+        top: 44px;
+    }
+
+    .current-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 18px;
+    }
+
+    .current-card .left {
+        max-width: 100%;
+    }
+
+    .current-icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    #cityName {
+        font-size: 24px;
+        overflow-wrap: anywhere;
+    }
+
+    #temperature {
+        font-size: 42px;
+    }
+
+    .table-wrap {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    table,
+    thead,
+    tbody,
+    tr,
+    th,
+    td {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        padding: 14px 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 8px 0;
+        border-bottom: 0;
+        text-align: right;
+    }
+
+    td::before {
+        color: rgba(230, 237, 243, 0.65);
+        text-align: left;
+        flex: 0 0 auto;
+    }
+
+    td:nth-child(1)::before { content: "Дата"; }
+    td:nth-child(2)::before { content: "Мин/Макс"; }
+    td:nth-child(3)::before { content: "Описание"; }
+    td:nth-child(4)::before { content: "Ветер"; }
+    td:nth-child(5)::before { content: "Осадки"; }
 }
