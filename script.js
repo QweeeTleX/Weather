@@ -221,27 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
   autolocate();
 
 
-  const bgMountain = document.querySelector(".bg-mountain");
-  if (bgMountain) {
-    const bgImg = new Image();
-    bgImg.src = "mountain.jpg";
-
-    const updateMountainSize = () => {
-      if (!bgImg.naturalHeight) return;
-
-      const scale = Math.min(
-        window.innerHeight / bgImg.naturalHeight,
-        1
-      );
-
-      bgMountain.style.backgroundSize = `auto ${bgImg.naturalHeight * scale}px`;
-    };
-
-    bgImg.onload = updateMountainSize;
-    window.addEventListener("resize", updateMountainSize);
-  }
-
-
   const snowCanvas = document.getElementById("snowCanvas");
   const snowCtx = snowCanvas.getContext("2d");
 
