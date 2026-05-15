@@ -316,6 +316,17 @@ body::after {
         flex: 0 0 auto;
     }
 
+    .forecast-icon {
+        width: 36px;
+        height: 36px;
+        margin: 0;
+        flex: 0 0 auto;
+    }
+
+    td:nth-child(3) {
+        justify-content: space-between;
+    }
+
     td:nth-child(1)::before { content: "Дата"; }
     td:nth-child(2)::before { content: "Мин/Макс"; }
     td:nth-child(3)::before { content: "Описание"; }
